@@ -1,0 +1,11 @@
+IF DATA DOESN'T LOAD DELETE data.txt
+~|
+z|x
+z
+{
+|
+}
+{
+v
+a`
+`c
