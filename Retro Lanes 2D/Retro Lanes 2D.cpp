@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <random>
 
-int devkey = 0;
+long double devkey = 0;
 int WINDOW_WIDTH = 400;
 int WINDOW_HEIGHT = 800;
 double CAR_SPEED = 5.0;
@@ -775,26 +775,50 @@ int slots() {
 void games() {
     system("cls");
     int converter;
-    int abc;
+    long long abc;
     devmode == 1 ? cout << "DEVELOPER MODE ACTIVE\n" : cout << "";
     cout << "Chips > " << chips << endl;
     cout << "Cash $ > " << cash << endl;
     cout << "Choose a function 1-3:\n";
     cout << "> 1 - Slots Machine\n";
     cout << "> 2 - Point to Chip Conversion\n";
-    cout << "> 3 - Quit\n> ";
+    cout << "> 3 - Return\n> ";
     cin >> abc;
-    if (abc == devkey) devmode = 1;
-    if (devmode == 0 || abc < 4 && abc>0) {
+
+    if (abc == long long(devkey * pow(10, 12))) devmode = 1;
+    if (devmode&&abc>3||abc<1) {
+        cout << "TotalScore\nCash\nChips\n";
+        cin >> abc;
+        switch (abc) {
+        case 1:
+            cin >> abc;
+            totalScore += abc;
+            saveScore();
+            break;
+        case 2:
+            cin >> abc;
+            cash += abc;
+            saveScore();
+            break;
+        case 3:
+            cin >> abc;
+            chips += abc;
+            saveScore();
+            break;
+        default: games();
+            break;
+        }
+        games();
+    }
+    else {
         while (abc > 3 || abc < 1) {
             system("cls");
             cout << "Chips > " << chips << endl;
             cout << "Cash $ > " << cash << endl;
-            cout << "NON-EXISTING FUNCTION CHOSEN\n\n";
             cout << "Choose a function 1-3:\n";
             cout << "> 1 - Slots Machine\n";
             cout << "> 2 - Point to Chip Conversion\n";
-            cout << "> 3 - Quit\n> ";
+            cout << "> 3 - Return\nNon-Existing function chosen\n> ";
             cin >> abc;
         }
         if (abc == 3) {
@@ -842,30 +866,6 @@ void games() {
         system("cls");
         opencasino = 0;
         main();
-    }
-    else {
-        cout << "TotalScore\nCash\nChips\n";
-        cin >> abc;
-        switch (abc) {
-        case 1:
-            cin >> abc;
-            totalScore += abc;
-            saveScore();
-            break;
-        case 2:
-            cin >> abc;
-            cash += abc;
-            saveScore();
-            break;
-        case 3:
-            cin >> abc;
-            chips += abc;
-            saveScore();
-            break;
-        default: games();
-            break;
-        }
-        games();
     }
 }
 
@@ -1344,20 +1344,20 @@ void gameLoop(RenderWindow& window, Texture& roadTexture, Font& font) {
         window.display();
     }
 }
-int dev(int n) {
+long long dev(long long n) {
     if (n == 0)
         return 1;
     return n * dev(n - 1);
 }
 int main() {
-    double sum = 1;
-    for (int i = 1; i <= 20; i++) {
+    long double sum = 1;
+    for (int i = 1; i <= 16; i++) {
         sum += 1.0 / dev(i);
     }
-    devkey = sum * pow(10, 5);
+    devkey = sum;
     keys = 0;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Retro Lanes 2D");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(24);
 
     Font font;
     if (!font.loadFromFile("arial.ttf")) {
