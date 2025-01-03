@@ -15,10 +15,10 @@ It's a 2D highway racing game where you must avoid crashing into other cars whil
    Total Score, High Score, Cash, and Recent Score.  
    Cash System: Earn cash through the casino feature and spend it on car skins in the shop.
 
-4. **Data**  
+3. **Data**  
    Saves your current game progress (score, cars, etc.) to a text file, which is reused the next time you play.
 
-5. **No Real Money**  
+4. **No Real Money**  
    This game is for entertainment only, using fake currency.
 
 ---
