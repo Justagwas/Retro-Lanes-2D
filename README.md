@@ -27,7 +27,7 @@ It's a 2D highway racing game where you must avoid crashing into other cars whil
 
 ### Downloading the Precompiled Executable via Installer
 1. **Download via the Installer (RECOMMENDED)**  
-   Visit the [Latest Release](https://github.com/Justagwas/Retro-Lanes-2D/releases/latest) and download `Retro_Lanes_2D_Setup`.
+   Visit the [Latest Release](https://github.com/Justagwas/Retro-Lanes-2D/releases/latest) and download `Retro_Lanes_2D_Setup.exe`
 
    [![Download Retro_Lanes_2D_Setup.exe](https://img.shields.io/badge/▼%20Download▼-Retro_Lanes_2D_Setup.exe-blue?style=for-the-badge)](https://github.com/Justagwas/Retro-Lanes-2D/releases/latest/download/Retro_Lanes_2D_Setup.exe)
 
